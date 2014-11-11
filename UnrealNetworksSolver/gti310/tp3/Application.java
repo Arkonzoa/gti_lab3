@@ -1,12 +1,14 @@
 package gti310.tp3;
 
+
 import gti310.tp3.parser.ConcreteParser;
+import gti310.tp3.parser.Parser;
 
 /**
  * The Application class defines a template method to call the elements to
- * solve the problem Unreal-Networks is façing.
+ * solve the problem Unreal-Networks is faï¿½ing.
  * 
- * @author François Caron <francois.caron.7@ens.etsmtl.ca>
+ * @author Franï¿½ois Caron <francois.caron.7@ens.etsmtl.ca>
  */
 public class Application {
 
@@ -20,7 +22,10 @@ public class Application {
 	 * @param args The array containing the arguments to the files.
 	 */
 	public static void main(String args[]) {
-		Node a = new ConcreteParser().parse("filename");
 		System.out.println("Unreal Networks Solver !");
+		//CrÃ©ation d'un objet parser pour sortir et traiter les informations du fichier texte d'entrÃ©e
+		Parser<Bean> parser = new ConcreteParser();
+		//Appelle de la fonction du parseur avec le fichier en entrÃ©e comme argument
+		parser.parse(args[0]);
 	}
 }
