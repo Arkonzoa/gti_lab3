@@ -8,8 +8,8 @@ public class Bean {
 	private int valeurInfini;
 	private int sommetDepart;
 	
-	private int[] sommetEntree;
-	private int[] sommetSortie;
+	private ArrayList<Integer> sommetEntree = new ArrayList<Integer>();
+	private ArrayList<Integer> sommetSortie = new ArrayList<Integer>();
 
 	/**
 	 * @return the nbsommet
@@ -56,37 +56,38 @@ public class Bean {
 	/**
 	 * @return the sommetEntree
 	 */
-	public int[] getSommetEntree() {
+	public ArrayList<Integer> getSommetEntree() {
 		return sommetEntree;
 	}
 
 	/**
 	 * @param sommetEntree the sommetEntree to set
 	 */
-	public void setSommetEntree(int[] sommetEntree) {
+	public void setSommetEntree(ArrayList<Integer> sommetEntree) {
 		this.sommetEntree = sommetEntree;
 	}
 
 	/**
 	 * @return the sommetSortie
 	 */
-	public int[] getSommetSortie() {
+	public ArrayList<Integer> getSommetSortie() {
 		return sommetSortie;
 	}
 
 	/**
 	 * @param sommetSortie the sommetSortie to set
 	 */
-	public void setSommetSortie(int[] sommetSortie) {
+	public void setSommetSortie(ArrayList<Integer> sommetSortie) {
 		this.sommetSortie = sommetSortie;
 	}
 	
-	public void addSommetSortie(int i,int a) {
-		sommetSortie[i]=a;
+	public void addSommetSortie(int a) {
+		sommetSortie.add(a);
 	}
 	
-	public void addSommetEntree(int i,int a) {
-		sommetEntree[i]=a;
+	public void addSommetEntree(int a) {
+		sommetEntree.add(a);
+		
 	}
 
 }

@@ -26,31 +26,32 @@ public class ConcreteParser implements Parser<Bean> {
 					// On place le premier cractère du fichier dans la variable
 					// voulu de notre objet
 					newBean.setNbsommet(Integer.parseInt(ligne));
-
+					System.out.println(ligne);
 				}
 				if (i == 1) {
 					newBean.setValeurInfini(Integer.parseInt(ligne));
-
+					System.out.println(ligne);
 				}
 				if (i == 2) {
 					newBean.setSommetDepart(Integer.parseInt(ligne));
-
+					System.out.println(ligne);
 				} else if (i > 2) {
 					// On découpe la ligne par espace pour garder que nos deux
 					// premiers caractères
 					splited = ligne.split("\\s+");
 					if (splited[0].equals("$")) {
+						
 						System.out.println("Fin du fichier");
+						break;
 					} else {
-						System.out.println("caractere 1: " + splited[0]
-								+ " caractere 2: " + splited[1]);
+						System.out.println(splited[0] + " : " + splited[1]);
 
-						newBean.addSommetEntree(i-2,Integer.parseInt(splited[0]));
-						 newBean.addSommetSortie(i-2,Integer.parseInt(splited[1]));
+						newBean.addSommetEntree(Integer.parseInt(splited[0]));
+						newBean.addSommetSortie(Integer.parseInt(splited[1]));
 					}
 
 				}
-				System.out.println(ligne);
+				//System.out.println(ligne);
 
 				i++;
 			}
@@ -58,7 +59,7 @@ public class ConcreteParser implements Parser<Bean> {
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
-		return null;
+		return newBean;
 	}
 
 }

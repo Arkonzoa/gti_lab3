@@ -3,6 +3,7 @@ package gti310.tp3;
 
 import gti310.tp3.parser.ConcreteParser;
 import gti310.tp3.parser.Parser;
+import gti310.tp3.solver.ConcreteSolver;
 
 /**
  * The Application class defines a template method to call the elements to
@@ -27,5 +28,7 @@ public class Application {
 		Parser<Bean> parser = new ConcreteParser();
 		//Appelle de la fonction du parseur avec le fichier en entrée comme argument
 		parser.parse(args[0]);
+		
+		//Solution solver = new ConcreteSolver().solve(parser.parse(args[0]));
 	}
 }
