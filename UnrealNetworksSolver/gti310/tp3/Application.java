@@ -4,6 +4,8 @@ package gti310.tp3;
 import gti310.tp3.parser.ConcreteParser;
 import gti310.tp3.parser.Parser;
 import gti310.tp3.solver.ConcreteSolver;
+import gti310.tp3.writer.ConcreteWriter;
+import gti310.tp3.writer.Writer;
 
 /**
  * The Application class defines a template method to call the elements to
@@ -31,5 +33,10 @@ public class Application {
 		Solution solver = new ConcreteSolver().solve(parser.parse(args[0]));
 		
 		System.out.println(solver.getPath());
+		
+		Writer<Solution> writer = new ConcreteWriter();
+		
+		writer.write(args[1], solver);
+		
 	}
 }

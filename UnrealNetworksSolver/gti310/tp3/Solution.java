@@ -1,7 +1,5 @@
 package gti310.tp3;
 
-import java.util.ArrayList;
-
 public class Solution {
 	private String path;
 
@@ -13,6 +11,6 @@ public class Solution {
 		this.path = path;
 	}
 	public void addToPath(String value){
-		this.path += value;
+		this.path += "\n"+value;
 	}
 }
