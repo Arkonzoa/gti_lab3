@@ -2,15 +2,27 @@ package gti310.tp3;
 
 import java.util.ArrayList;
 
+/**
+ * Classe contenant toutes les informations extraites du fichiers texte en entrée
+ *
+ */
 public class Bean {
 	
+	/**ATTRIBUTS**/
+	
+	//Attribut contenant le nombre de sommets
 	private int nbsommet;
+	//Attribut contenant la valeur infini
 	private int valeurInfini;
+	//Attribut contenant le sommet de départ
 	private int sommetDepart;
 	
+	//ArrayList contenant les chemins possible entre sommets
 	private ArrayList<Integer> sommetEntree = new ArrayList<Integer>();
 	private ArrayList<Integer> sommetSortie = new ArrayList<Integer>();
 
+	/**MÉTHODES**/
+	
 	/**
 	 * @return the nbsommet
 	 */
@@ -81,10 +93,18 @@ public class Bean {
 		this.sommetSortie = sommetSortie;
 	}
 	
+	/**
+	 * Permet d'ajouter un sommet dans le tableau contenant les sommets de sorties
+	 * @param a Sommet à ajouter
+	 */
 	public void addSommetSortie(int a) {
 		sommetSortie.add(a);
 	}
 	
+	/**
+	 * Permet d'ajouter un sommet dans le tableau contenant les sommets d'entrées
+	 * @param a Sommet à ajouter
+	 */
 	public void addSommetEntree(int a) {
 		sommetEntree.add(a);
 		
