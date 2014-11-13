@@ -23,12 +23,11 @@ public class Application {
 	 * @param args The array containing the arguments to the files.
 	 */
 	public static void main(String args[]) {
-		System.out.println("Unreal Networks Solver !");
+		System.out.println("Bienvenue dans l'application : Unreal Networks Solver !");
 		//Création d'un objet parser pour sortir et traiter les informations du fichier texte d'entrée
 		Parser<Bean> parser = new ConcreteParser();
-		//Appelle de la fonction du parseur avec le fichier en entrée comme argument
-		parser.parse(args[0]);
 		
+		//Appelle de la fonction du parseur avec le fichier en entrée comme argument
 		Solution solver = new ConcreteSolver().solve(parser.parse(args[0]));
 		
 		System.out.println(solver.getPath());

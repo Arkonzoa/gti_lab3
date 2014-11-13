@@ -23,21 +23,21 @@ public class ConcreteParser implements Parser<Bean> {
 			int i = 0;
 			while ((ligne = br.readLine()) != null) {
 				if (i == 0) {
-					// On place le premier cractère du fichier dans la variable
+					// On place le premier cractï¿½re du fichier dans la variable
 					// voulu de notre objet
 					newBean.setNbsommet(Integer.parseInt(ligne));
-					System.out.println(ligne);
+					System.out.println("Nombre de sommets : "+ ligne);
 				}
 				if (i == 1) {
 					newBean.setValeurInfini(Integer.parseInt(ligne));
-					System.out.println(ligne);
+					System.out.println("Valeur infini : "+ligne);
 				}
 				if (i == 2) {
 					newBean.setSommetDepart(Integer.parseInt(ligne));
-					System.out.println(ligne);
+					System.out.println("Sommet de dÃ©part : "+ligne);
 				} else if (i > 2) {
-					// On découpe la ligne par espace pour garder que nos deux
-					// premiers caractères
+					// On dï¿½coupe la ligne par espace pour garder que nos deux
+					// premiers caractï¿½res
 					splited = ligne.split("\\s+");
 					if (splited[0].equals("$")) {
 						
