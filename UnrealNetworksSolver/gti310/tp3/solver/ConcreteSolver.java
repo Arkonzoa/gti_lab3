@@ -28,7 +28,7 @@ public class ConcreteSolver implements Solver<Bean, Solution>{
 		
 		
 		
-		List<Link<String>> path = dgraph.findEulerianPath(summits.get(0), summits.get(0));
+		List<Link<String>> path = dgraph.findEulerianPath(new Summit<String>(Integer.toString(input.getSommetDepart())), new Summit<String>(Integer.toString(input.getSommetDepart())));
 		solution.setPath("");
 		for (int i=0; i<path.size(); i++) {
 			   solution.addToPath(path.get(i).start.label + " ");
