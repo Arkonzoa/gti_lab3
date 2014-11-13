@@ -3,16 +3,16 @@ package gti310.tp3;
 import java.util.ArrayList;
 
 public class Solution {
-	private ArrayList<Integer> path;
+	private String path;
 
-	public ArrayList<Integer> getPath() {
+	public String getPath() {
 		return path;
 	}
 
-	public void setPath(ArrayList<Integer> path) {
+	public void setPath(String path) {
 		this.path = path;
 	}
-	public void addToPath(int value){
-		this.path.add(value);
+	public void addToPath(String value){
+		this.path += value;
 	}
 }

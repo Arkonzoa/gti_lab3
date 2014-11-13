@@ -29,6 +29,8 @@ public class Application {
 		//Appelle de la fonction du parseur avec le fichier en entrée comme argument
 		parser.parse(args[0]);
 		
-		//Solution solver = new ConcreteSolver().solve(parser.parse(args[0]));
+		Solution solver = new ConcreteSolver().solve(parser.parse(args[0]));
+		
+		System.out.println(solver.getPath());
 	}
 }

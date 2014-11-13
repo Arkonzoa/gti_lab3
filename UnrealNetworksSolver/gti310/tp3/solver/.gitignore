@@ -1,2 +1,7 @@
 /Solver.class
 /ConcreteSolver.class
+/Summit.class
+/Graph.class
+/GraphInterface.class
+/Link.class
+/DirectedGraph.class
