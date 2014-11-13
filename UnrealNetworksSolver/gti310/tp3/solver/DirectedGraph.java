@@ -38,19 +38,21 @@ public class DirectedGraph<T> extends Graph<T> implements GraphInterface<T> {
 	public Summit<T> getUnvisitedChildren(Summit<T> n) {
 		// TODO Auto-generated method stub
 		for (Link<T> l : links) {
-		    if ( l.visited==false && l.start.equals(n) ) {
+		    if (l.visited==false && l.start.equals(n)) {
 		    	l.visited=true;
 		    	return l.end;
 		    }
 		}
 		return null;
 	}
+	
 	public boolean isAllLinkVisited() {
 		for (Link<T> link : links) {
 			if (! link.visited) return false;
 		}
 		return true;
 	}
+	//This method checks if there are links that have not yet been flagged as visited
 	public Link<T> getUnvisitedLink(Summit<T> summit) {
 		for (Link<T> link : links) {
 			if ( link.visited==false && link.start.label.equals(summit.label) ) {
@@ -60,6 +62,7 @@ public class DirectedGraph<T> extends Graph<T> implements GraphInterface<T> {
 		}
 		return null;
 	}
+	
 	public List<Link<T>> findEulerianPath(Summit<T> start, Summit<T> end) {
 		List<Link<T>> path = findEulerianPath(start);
 		if (path==null || path.size()==0) {
@@ -73,6 +76,7 @@ public class DirectedGraph<T> extends Graph<T> implements GraphInterface<T> {
 		}
 		return path;
 	}
+	
 	public List<Link<T>> findEulerianPath(Summit<T> start) {
 		Stack<Link<T>> forward =new Stack<Link<T>>();
 		Stack<Link<T>> backtrack =new Stack<Link<T>>();
@@ -83,7 +87,7 @@ public class DirectedGraph<T> extends Graph<T> implements GraphInterface<T> {
 		    link = getUnvisitedLink(link.end);
 		}
 		    
-		while ( ( !forward.isEmpty() ) ) {
+		while ((!forward.isEmpty())) {
 			link = forward.pop();
 		    backtrack.push(link);
 		    link = getUnvisitedLink(link.start);
