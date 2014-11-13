@@ -46,6 +46,7 @@ public class ConcreteParser implements Parser<Bean> {
 					} else {
 						System.out.println(splited[0] + " : " + splited[1]);
 
+						//On ajoute nos sommets dans le bean
 						newBean.addSommetEntree(Integer.parseInt(splited[0]));
 						newBean.addSommetSortie(Integer.parseInt(splited[1]));
 					}

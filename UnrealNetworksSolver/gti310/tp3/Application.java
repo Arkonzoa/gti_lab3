@@ -1,6 +1,5 @@
 package gti310.tp3;
 
-
 import gti310.tp3.parser.ConcreteParser;
 import gti310.tp3.parser.Parser;
 import gti310.tp3.solver.ConcreteSolver;
@@ -32,10 +31,13 @@ public class Application {
 		//Appelle de la fonction du parseur avec le fichier en entrée comme argument
 		Solution solver = new ConcreteSolver().solve(parser.parse(args[0]));
 		
+		//Ecriture de la solution dans la console
 		System.out.println(solver.getPath());
 		
+		//Creation d'un writer
 		Writer<Solution> writer = new ConcreteWriter();
 		
+		//Ecriture du fichier texte avec le second argument et la solution comme parametre
 		writer.write(args[1], solver);
 		
 	}
